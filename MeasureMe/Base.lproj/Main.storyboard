@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="MeasureMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rMS-o1-hhh"/>
+                        <viewControllerLayoutGuide type="bottom" id="BQi-aM-hk7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EM4-Ls-Cci">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYc-57-0JY">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jae-8j-UbV">
+                                <rect key="frame" x="76" y="579" width="223" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Set Starting Point">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="xda-bk-LBr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.34mm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14j-zl-fR7">
+                                <rect key="frame" x="141.5" y="496.5" width="92.5" height="32.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rto-py-J4k">
+                                <rect key="frame" x="177" y="323.5" width="20" height="20"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="Eg1-7a-n2j"/>
+                                    <constraint firstAttribute="height" constant="20" id="jLw-o8-7SQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DYc-57-0JY" firstAttribute="top" secondItem="rMS-o1-hhh" secondAttribute="bottom" id="CpL-O5-Dw6"/>
+                            <constraint firstItem="DYc-57-0JY" firstAttribute="leading" secondItem="EM4-Ls-Cci" secondAttribute="leading" id="DDo-LB-kUR"/>
+                            <constraint firstItem="Rto-py-J4k" firstAttribute="centerY" secondItem="EM4-Ls-Cci" secondAttribute="centerY" id="EpN-wc-1yf"/>
+                            <constraint firstItem="Rto-py-J4k" firstAttribute="centerX" secondItem="EM4-Ls-Cci" secondAttribute="centerX" id="FjQ-73-Gaj"/>
+                            <constraint firstAttribute="trailing" secondItem="DYc-57-0JY" secondAttribute="trailing" id="Tp7-Y2-QAp"/>
+                            <constraint firstItem="BQi-aM-hk7" firstAttribute="top" secondItem="DYc-57-0JY" secondAttribute="bottom" id="TzD-1v-bgF"/>
+                            <constraint firstItem="Jae-8j-UbV" firstAttribute="top" secondItem="14j-zl-fR7" secondAttribute="bottom" constant="50" id="XIC-lC-uMC"/>
+                            <constraint firstItem="BQi-aM-hk7" firstAttribute="top" secondItem="Jae-8j-UbV" secondAttribute="bottom" constant="40" id="a3i-xZ-c1X"/>
+                            <constraint firstItem="Jae-8j-UbV" firstAttribute="centerX" secondItem="EM4-Ls-Cci" secondAttribute="centerX" id="dFu-2i-e54"/>
+                            <constraint firstItem="14j-zl-fR7" firstAttribute="centerX" secondItem="EM4-Ls-Cci" secondAttribute="centerX" id="nyo-Z0-8uy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="measurementLabel" destination="14j-zl-fR7" id="X85-wI-M8M"/>
+                        <outlet property="sceneView" destination="DYc-57-0JY" id="Ff6-vz-uHY"/>
+                        <outlet property="targetView" destination="Rto-py-J4k" id="hgK-jb-KPA"/>
+                        <outlet property="theButton" destination="Jae-8j-UbV" id="WUL-UV-gh4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-47.200000000000003" y="24.7376311844078"/>
+        </scene>
+    </scenes>
+</document>
